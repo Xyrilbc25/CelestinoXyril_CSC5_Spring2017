@@ -35,7 +35,8 @@ int main(int argc, char** argv) {
     
     //Output the transformed data
     cout<<"Your car's gas mileage is = "<<endl;
-    cout<<mpg<<endl;
+    cout<<mpg<<"Miles Per Gallon"<<endl;
+    
     //Exit stage right!
     return 0;
 }
