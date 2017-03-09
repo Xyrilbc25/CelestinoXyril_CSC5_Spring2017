@@ -1,6 +1,6 @@
 /* 
  * File:   main.cpp
- * Author: Dr. Mark E. Lehr
+ * Author: Xyril Celestino
  * Created on February 14, 2017, 11:32 AM
  * Purpose:  Template to be utilized in creating
  *           solutions to problems in our CSC/CIS 5 
@@ -19,9 +19,7 @@ using namespace std; //Name-space under which system libraries exist
 
 //Execution begins here
 int main(int argc, char** argv) {
-    //Declare variables
-    
-    //Initialize variables
+    //Declare and Initialize variables
     
     //Input data
     
