@@ -19,31 +19,31 @@ using namespace std; //Name-space under which system libraries exist
 //Execution begins here
 int main(int argc, char** argv) {
     //Declare and Initialize variables
-     unsigned short     name,    //User's name
-                        age,     //User's age
-                        city,    //Name of City
-                        college, //Name of College
-                        prof,    //Profession
-                        anml,    //Type of Animal
-                        pname;   //Pet's name
+     string      name,    //User's name
+                 age,     //User's age
+                 city,    //Name of City
+                 college, //Name of College
+                 prof,    //Profession
+                 anml,    //Type of Animal
+                 pname;   //Pet's name
     
     
     //Input data
     cout<<"We're going to play a word game."<<endl;
     cout<<"Please input your name = ";
-    cin>>name;
+    getline(cin, name);
     cout<<"Please input your age = ";
-    cin>>age;
+    getline(cin, age);
     cout<<"Please input the name of a city = ";
-    cin>>city;
+    getline(cin, city);
     cout<<"Please input the name of a college = ";
-    cin>>college;
+    getline(cin, college);
     cout<<"Please input a profession = ";
-    cin>>prof;
+    getline(cin, prof);
     cout<<"Please input a type of animal = ";
-    cin>>anml;
+    getline(cin, anml);
     cout<<"Please input the pet name = ";
-    cin>>pname;
+    getline(cin, pname);
            
     //Map inputs to outputs or process the data
     
