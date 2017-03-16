@@ -1,10 +1,9 @@
 /* 
- * File:   main.cpp
+ * File:   PaycheckDependent
  * Author: Xyril Celestino
- * Created on February 14, 2017, 11:32 AM
- * Purpose:  Template to be utilized in creating
- *           solutions to problems in our CSC/CIS 5 
- *           class.
+ * Created on March 16, 2017, 12:30 PM
+ * Purpose:  Program that outputs paycheck if you work over or under 
+ *           40 hours
  */
 
 //System Libraries
@@ -20,12 +19,23 @@ using namespace std; //Name-space under which system libraries exist
 //Execution begins here
 int main(int argc, char** argv) {
     //Declare and Initialize variables
+    unsigned short HrsWrk;       //Hours Worked
+    char           PayChk;       //Paycheck
+    float          Payrt = 10;   //PayRate
     
     //Input data
+    cout<<"This Program calculates your paycheck based on how many hours";
+    cout<<" worked"<<endl;
+    cout<<"Type in the amount of hours worked"<<endl;
+    cin>>HrsWrk;
     
     //Map inputs to outputs or process the data
+    if      (HrsWrk<=40) PayChk = 10*HrsWrk;
+    else                 PayChk = 10*HrsWrk+10(HrsWrk-40);
     
     //Output the transformed data
+    cout<<"For "<<HrsWrk<<" hours worked, your paycheck is = $"<<PayChk<<endl;
+    
     
     //Exit stage right!
     return 0;
