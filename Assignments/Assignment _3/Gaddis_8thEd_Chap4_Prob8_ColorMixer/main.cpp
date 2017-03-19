@@ -22,7 +22,9 @@ int main(int argc, char** argv) {
     
     //Input data
     cout<<"This program tells the secondary color of two primary ";
-    cout<<"colors that are mixed"
+    cout<<"colors that are mixed (red,blue,yellow)"<<endl;
+    cout<<"please input two colors"<<endl;
+    cin>>
     
     //Map inputs to outputs or process the data
     

@@ -20,8 +20,8 @@ using namespace std; //Name-space under which system libraries exist
 
 int main(int argc, char** argv) {
     //Declare and initialize variables
-    int           numbr;  //integer to be converted
-    char                   RomNum; //Roman Numeral conversion
+    unsigned int           numbr;  //integer to be converted
+
     //Input data
     cout<<"This program converts any number into a Roman Numeral"<<endl;
     cout<<"The data type is an integer from [1-10]"<<endl;
@@ -35,20 +35,29 @@ int main(int argc, char** argv) {
     //Map inputs to outputs or process the data
     switch     (numbr)
     {  
-        case  '10': RomNum = 'X';break;
-        case   '9': RomNum = 'IX';break;
-        case   '8': RomNum = 'VIII';break;
-        case   '7': RomNum = 'VII';break;
-        case   '6': RomNum = 'VI';break;
-        case   '5': RomNum = 'V';break;
-        case   '4': RomNum = 'IV';break;
-        case   '3': RomNum = 'III';break;
-        case   '2': RomNum = 'II';break;
-        case   '1': RomNum = 'I';break;
+        case 1: cout<<"The Roman Numeral of "<<numbr<<" is I"<<endl;
+                break;
+        case 2: cout<<"The Roman Numeral of "<<numbr<<" is II"<<endl;
+                break;
+        case 3: cout<<"The Roman Numeral of "<<numbr<<" is III"<<endl;
+                break;
+        case 4: cout<<"The Roman Numeral of "<<numbr<<" is IV"<<endl;
+                break;
+        case 5: cout<<"The Roman Numeral of "<<numbr<<" is V"<<endl;
+                break;
+        case 6: cout<<"The Roman Numeral of "<<numbr<<" is VI"<<endl;
+                break;
+        case 7: cout<<"The Roman Numeral of "<<numbr<<" is VII"<<endl;
+                break;
+        case 8: cout<<"The Roman Numeral of "<<numbr<<" is VIII"<<endl;
+                break;
+        case 9: cout<<"The Roman Numeral of "<<numbr<<" is IX"<<endl;
+                break;
+        case 10: cout<<"The Roman Numeral of "<<numbr<<" is X"<<endl;
+                break;
     }
     
     //Output the transformed data
-    cout<<"For a number, "<<numbr<<" the roman numeral is "<<RomNum<<"."<<endl;
     
     //Exit stage right!
     return 0;
