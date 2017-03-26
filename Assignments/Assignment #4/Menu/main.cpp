@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
         cout<<"Type 0 to exit"<<endl;
         cout<<"Type 1 for Sum 1 to n Problem"<<endl;
         cout<<"Type 2 for Sum 0.1 error Problem"<<endl;
-        cout<<"Type 3 for Problem #3"<<endl;
+        cout<<"Type 3 for Gaddis_8thEd_Ch5_Prob1_SumofNumbers"<<endl;
         cout<<"Type 4 for Problem #4"<<endl;
         cout<<"Type 5 for Problem #5"<<endl;
         cout<<"Type 6 for Problem #6"<<endl;
@@ -74,7 +74,29 @@ int main(int argc, char** argv) {
                 break;
             }
             case '3':{
-                cout<<"In Problem solution #3"<<endl;
+                    //Declare and initialize variables
+                    //Make sure 0<n<50
+                    int n;
+                    int sum = 0;
+
+                    //Input data
+                    cout<<"This program retrieves the sum of all integers from ";
+                    cout<<"1 to the number entered."<<endl;
+                    cout<<"Please input a number from 1 to 50"<<endl;
+                    cin>>n;
+
+                    //Map inputs to outputs or process the data
+                    if (!(n>=1&&n<=50)){
+                        cout<<"You failed to input a number between 1 and 50"<<endl;
+                        return 1;
+                    }
+                    for (int i = 1; i<=n; i++){
+                        sum+=i;
+                    }
+
+                    //Output the transformed data
+                    cout<<"The computed sum of 1 to "<<n<<" = "<<sum<<endl;
+
                 break;
             }
             case '4':{
