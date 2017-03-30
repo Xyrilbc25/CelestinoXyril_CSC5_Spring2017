@@ -15,6 +15,11 @@ using namespace std; //Name-space under which system libraries exist
 //User Libraries
 
 //Global Constants
+const float MSSERTH = 5.972e27f;   //Mass of Earth in Grams
+const float GCONST   = 6.673E-8f;   //Gravitational Constant cm^3/gm sec^2
+const float CNVFTCM  = 1.0f/30.48f; //Conversion from ft to cm
+const float CNVMFT   = 5280.0f;     //Conversion from miles to ft
+const float RADERTH  = 3959;        //Radius of the Earth in miles
 
 //Function Prototypes
 
@@ -32,7 +37,7 @@ int main(int argc, char** argv) {
         cout<<"Type 3 for Gaddis_8thEd_Ch5_Prob1_SumofNumbers"<<endl;
         cout<<"Type 4 for Gaddis_8thEd_Ch5_Prob8_MathTutor"<<endl;
         cout<<"Type 5 for Gaddis_8thEd_Prob2_ASCIICode"<<endl;
-        cout<<"Type 6 for Problem #6"<<endl;
+        cout<<"Type 6 for Savitch_9thEd_PracticeProb7_CheckYourWeight"<<endl;
         cout<<"Type 7 for Problem #7"<<endl;
         cout<<"Type 8 for Problem #8"<<endl;
         cout<<"Type 9 for Problem #9"<<endl;
@@ -248,7 +253,16 @@ int main(int argc, char** argv) {
                 break;
             }
             case '6':{
-                cout<<"In Problem solution #6"<<endl;
+                 //Declare and initialize variables
+                float myWeight;     //Result in lbs
+                float myMass = 7;   //Units of slugs
+
+                //Map inputs to outputs or process the data
+                myWeight = GCONST*CNVFTCM*CNVFTCM*CNVFTCM*MSSERTH*myMass
+                        /(RADERTH*RADERTH*CNVMFT);
+
+                //Output the transformed data
+                cout<<"You weigh "<<myWeight<<" lbs"<<endl;
                 break;
             }
             case '7':{
