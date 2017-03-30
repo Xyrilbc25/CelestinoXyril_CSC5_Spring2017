@@ -1,5 +1,5 @@
 /* 
- * File:   GameOfCraps_V3
+ * File:   GameOfCraps_V4
  * Author: Xyril Celestino
  * Created on March 28, 2017, 12:24 PM
  * Purpose:  Simulate a Craps Game
@@ -25,7 +25,8 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     
     //Declare and initialize variables
-    fstream in;
+    ifstream in;
+    ofstream out;
     int nGames, wins = 0, losses = 0;
     int mxThrw = 0, numThrw = 0;
     
@@ -82,10 +83,23 @@ int main(int argc, char** argv) {
             <<static_cast<float>(losses)/nGames*PERCENT<<endl;
      cout<<"Maximum number of throws in a game = "<<mxThrw<<endl;
      cout<<"Average throw per game = "<<static_cast<float>(numThrw)/nGames<<endl;
+    
+    //Output the Transformed Data into a file
+    cout<<fixed<<setprecision(2)<<showpoint;
+    cout<<"Total number of Games = "<<nGames<<endl;
+    cout<<"Number of games won   = "<<wins<<endl;
+    cout<<"number of games lost  = "<<losses<<endl;
+    cout<<"Total wins and losses = "<<wins + losses<<endl;
+    cout<<"Percentage wins       = "
+            <<static_cast<float>(wins)/nGames*PERCENT<<endl;
+     cout<<"Percentage losses       = "
+            <<static_cast<float>(losses)/nGames*PERCENT<<endl;
+     cout<<"Maximum number of throws in a game = "<<mxThrw<<endl;
+     cout<<"Average throw per game = "<<static_cast<float>(numThrw)/nGames<<endl;
      
     //Exit stage right!
     in.close();
-    
+    out.close();
     return 0;
 }
 

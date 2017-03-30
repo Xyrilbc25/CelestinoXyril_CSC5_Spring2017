@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=gameofcraps_v3
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/gameofcraps_v3
+CND_ARTIFACT_NAME_Debug=gameofcraps_v4
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/gameofcraps_v4
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=gameofcrapsv3.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/gameofcrapsv3.tar
+CND_PACKAGE_NAME_Debug=gameofcrapsv4.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/gameofcrapsv4.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=gameofcraps_v3
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/gameofcraps_v3
+CND_ARTIFACT_NAME_Release=gameofcraps_v4
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/gameofcraps_v4
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=gameofcrapsv3.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/gameofcrapsv3.tar
+CND_PACKAGE_NAME_Release=gameofcrapsv4.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/gameofcrapsv4.tar
 #
 # include compiler specific variables
 #
