@@ -10,7 +10,7 @@
 #include <iostream>  //Input - Output Library
 #include <cstdlib>   //Random Number Generator
 #include <ctime>     //Time library to seed the random number generator
-
+#include <iomanip>   //Formatting
 using namespace std; //Name-space under which system libraries exist
 
 //User Libraries
