@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
         cout<<"Type 2 for Sum 0.1 error Problem"<<endl;
         cout<<"Type 3 for Gaddis_8thEd_Ch5_Prob1_SumofNumbers"<<endl;
         cout<<"Type 4 for Gaddis_8thEd_Ch5_Prob8_MathTutor"<<endl;
-        cout<<"Type 5 for Problem #5"<<endl;
+        cout<<"Type 5 for Gaddis_8thEd_Prob2_ASCIICode"<<endl;
         cout<<"Type 6 for Problem #6"<<endl;
         cout<<"Type 7 for Problem #7"<<endl;
         cout<<"Type 8 for Problem #8"<<endl;
@@ -240,7 +240,11 @@ int main(int argc, char** argv) {
                 break;
             }
             case '5':{
-                cout<<"In Problem solution #5"<<endl;
+                //Map inputs to outputs or process the data
+                for (int i=0;i<=127;i++){
+                    cout<<static_cast<char>(i);
+                    if (i%16==15)cout<<endl;        //Every 16 symbols, end line
+                }
                 break;
             }
             case '6':{
