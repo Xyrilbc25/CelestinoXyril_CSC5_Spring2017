@@ -25,12 +25,13 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     
     //Declare and initialize variables
-    fstream in;
+    ifstream in;
     int nGames, wins = 0, losses = 0;
-    int mxThrw = 0, numThrw = 0;
+    int mxThrw = 0, numThrw = 0, lmGames = 1000000;
     
     in.open("GameInfo.dat");
     while(in>>nGames);  //Last Value becomes number of games
+    nGames=nGames>lmGames?lmGames:nGames;
     
     //Play the Game
     for(int game = 1;game<=nGames;game++){

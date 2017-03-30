@@ -28,10 +28,12 @@ int main(int argc, char** argv) {
     ifstream in;
     ofstream out;
     int nGames, wins = 0, losses = 0;
-    int mxThrw = 0, numThrw = 0;
+    int mxThrw = 0, numThrw = 0, lmGames = 100000;
     
     in.open("GameInfo.dat");
+    out.open("Gamestats.dat");
     while(in>>nGames);  //Last Value becomes number of games
+    nGames=nGames>lmGames?lmGames:nGames;
     
     //Play the Game
     for(int game = 1;game<=nGames;game++){
