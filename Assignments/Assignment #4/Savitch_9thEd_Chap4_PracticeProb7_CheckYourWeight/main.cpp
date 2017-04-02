@@ -12,7 +12,7 @@ using namespace std; //Name-space under which system libraries exist
 //User Libraries
 
 //Global Constants
-const float MSSERTH = 5.972e27f;   //Mass of Earth in Grams
+const float MSSERTH = 5.972e27f;    //Mass of Earth in Grams
 const float GCONST   = 6.673E-8f;   //Gravitational Constant cm^3/gm sec^2
 const float CNVFTCM  = 1.0f/30.48f; //Conversion from ft to cm
 const float CNVMFT   = 5280.0f;     //Conversion from miles to ft
