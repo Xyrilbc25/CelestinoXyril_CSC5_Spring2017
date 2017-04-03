@@ -12,21 +12,26 @@ using namespace std; //Name-space under which system libraries exist
 //User Libraries
 
 //Global Constants
+const float CalBrn = 3.9;    //Calories burned per minute
 
 //Function Prototypes
 
 //Execution begins here
 int main(int argc, char** argv) {
     //Declare and initialize variables
-    //Make sure 0<=Time<=30
-    int Time = 30, CalBrn = 3.6;
+    int min, Brn = 0;   //Minutes of exercise and Calories burned
     
     //Map inputs to outputs or process the data
-    for (int i = 1; i<=Time; i++5){
-        CalBrn+=i;
-    }
+    cout<<"This program calculates the amount of calories burned every 5 ";
+    cout<<"minutes for a total of 30 minutes"<<endl;
+    cout<<"-----------------------------------------------------"<<endl;
     
-    //Output the transformed data
+    //Loop calculations and output transformed data
+    for (min = 5;min<=30;min+=5)
+    {
+        Brn = CalBrn*min;   //Calories Burned per minute
+        cout<<"At "<<min<<" minutes you burned "<<Brn<<" Calories."<<endl;
+    }
     
     //Exit stage right!
     return 0;

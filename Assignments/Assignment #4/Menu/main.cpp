@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
         cout<<"Type 4 for Gaddis_8thEd_Ch5_Prob8_MathTutor"<<endl;
         cout<<"Type 5 for Gaddis_8thEd_Prob2_ASCIICode"<<endl;
         cout<<"Type 6 for Savitch_9thEd_PracticeProb7_CheckYourWeight"<<endl;
-        cout<<"Type 7 for Problem #7"<<endl;
+        cout<<"Type 7 for Gaddis_8thed_Prob4_caloriesBurned"<<endl;
         cout<<"Type 8 for Problem #8"<<endl;
         cout<<"Type 9 for Problem #9"<<endl;
         
@@ -266,7 +266,20 @@ int main(int argc, char** argv) {
                 break;
             }
             case '7':{
-                cout<<"In Problem solution #7"<<endl;
+                    //Declare and initialize variables
+                    int min, Brn = 0;   //Minutes of exercise and Calories burned
+
+                    //Map inputs to outputs or process the data
+                    cout<<"This program calculates the amount of calories burned every 5 ";
+                    cout<<"minutes for a total of 30 minutes"<<endl;
+                    cout<<"-----------------------------------------------------"<<endl;
+
+                    //Loop calculations and output transformed data
+                    for (min = 5;min<=30;min+=5)
+                    {
+                        Brn = CalBrn*min;   //Calories Burned per minute
+                        cout<<"At "<<min<<" minutes you burned "<<Brn<<" Calories."<<endl;
+                    }
                 break;
             }
             case '8':{
