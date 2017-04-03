@@ -12,13 +12,13 @@ using namespace std; //Name-space under which system libraries exist
 //User Libraries
 
 //Global Constants
-const float CalBrn = 3.9;    //Calories burned per minute
 
 //Function Prototypes
 
 //Execution begins here
 int main(int argc, char** argv) {
     //Declare and initialize variables
+    float CalBrn = 3.9;    //Calories burned per minute
     int min, Brn = 0;   //Minutes of exercise and Calories burned
     
     //Map inputs to outputs or process the data

@@ -10,6 +10,7 @@
 #include <cstdlib>   //Random Number Generator
 #include <ctime>     //Time library to seed the random number generator
 #include <iomanip>   //Formatting
+#include <cmath>     //Math Library
 using namespace std; //Name-space under which system libraries exist
 
 //User Libraries
@@ -38,9 +39,9 @@ int main(int argc, char** argv) {
         cout<<"Type 4 for Gaddis_8thEd_Ch5_Prob8_MathTutor"<<endl;
         cout<<"Type 5 for Gaddis_8thEd_Prob2_ASCIICode"<<endl;
         cout<<"Type 6 for Savitch_9thEd_PracticeProb7_CheckYourWeight"<<endl;
-        cout<<"Type 7 for Gaddis_8thed_Prob4_caloriesBurned"<<endl;
-        cout<<"Type 8 for Problem #8"<<endl;
-        cout<<"Type 9 for Problem #9"<<endl;
+        cout<<"Type 7 for Gaddis_8thed_Prob4_CaloriesBurned"<<endl;
+        cout<<"Type 8 for Gaddis_8thEd_Prob6_Distance"<<endl;
+        cout<<"Type 9 for Gaddis_8thEd_Prob12_Celsius2Fahrenheit"<<endl;
         
         //Input the choice
         cin>>choice;
@@ -283,11 +284,42 @@ int main(int argc, char** argv) {
                 break;
             }
             case '8':{
-                cout<<"In Problem solution #8"<<endl;
+                    //Declare and initialize variables
+                    float Dist = 0;     //Distance Traveled
+                    int Spd, Time, HrIn;  //Speed and Time
+
+                    //Input data
+                    cout<<"This program calculates distance traveled for each hour."<<endl;
+                    cout<<"Please input the speed of the vehicle in MPH:"<<endl;
+                    cin>>Spd;
+                    cout<<"Please input hours traveled"<<endl;
+                    cin>>HrIn;
+
+                    //Map inputs to outputs or process the data
+                     for (Time==HrIn;Time<=HrIn;Time+=1)
+                    {
+                        Dist = Spd*Time;   //Calories Burned per minute
+                        cout<<"At "<<Time<<" hours you drove "<<Dist<<" Miles."<<endl;
+                    }
                 break;
             }
             case '9':{
-                cout<<"In Problem solution #9"<<endl;
+                    //Declare and initialize variables
+                    float F; //Fahrenheit
+                    int C;   //Celsius
+
+                    //Map inputs to outputs or process the data
+                    cout<<"This program creates a table that converts Celsius";
+                    cout<<" to Fahrenheit"<<endl;
+                    cout<<"Celsius                                  Fahrenheit"<<endl;
+                    cout<<"___________________________________________________"<<endl;
+
+                    //Loop calculations and output transformed data
+                    for (C==0;C<=20;C+=1)
+                    {
+                        F = (9/5)*C+32;   //Celsius to Fahrenheit conversion
+                        cout<<C<<" Celsius         =                "<<F<<" Fahrenheit"<<endl;
+                    }
                 break;
             }
             default:{

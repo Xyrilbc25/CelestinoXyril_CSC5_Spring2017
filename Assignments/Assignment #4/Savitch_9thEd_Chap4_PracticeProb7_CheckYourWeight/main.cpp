@@ -1,7 +1,7 @@
 /* 
  * File:   Savitch_9thEd_Chap4_PracticeProb7_CheckYourWeight
  * Author: Xyril Celestino
- * Created on March 30, 2017, 12:20 AM
+ * Created on March 30, 2017, 12:20 PM
  * Purpose:  Program that calculates your weight
  */
 
