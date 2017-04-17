@@ -14,12 +14,12 @@ using namespace std; //Name-space under which system libraries exist
 //Global Constants
 
 //Function Prototypes
-//Execution begins here
 void display();
 bool check(int a, int b);
 int  drop(int b,char player);
 char place[6][7];
 
+//Execution begins here
 int main(int argc, char** argv) {
     for (int a=0;a<=5;a++){
         for (int b=0;b<=6;b++)
