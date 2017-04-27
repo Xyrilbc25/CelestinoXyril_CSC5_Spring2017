@@ -1,10 +1,8 @@
 /* 
- * File:   main.cpp
+ * File:   FunctionCapstone
  * Author: Xyril Celestino
  * Created on February 14, 2017, 11:32 AM
- * Purpose:  Template to be utilized in creating
- *           solutions to problems in our CSC/CIS 5 
- *           class.
+ * Purpose:  Functions
  */
 
 //System Libraries
@@ -24,7 +22,7 @@ float fv3 (float,float,int);
 float fv4 (float,float,int=12);
 float fv5 (float,float,int);
 float fv5 (float,float,int, float &);
-float fv6 (float,float,int);
+float fv7 (float,float,int);
 //Execution begins here
 int main(int argc, char** argv) {
     //Declare and initialize variables
@@ -52,12 +50,12 @@ int main(int argc, char** argv) {
     int funcCnt = fv5(pv,ir/100,n,fv);
     cout<<"Future Value Function 6 = $"<<fv<<endl;
     cout<<"The number of times this function was called = "<<funcCnt<<endl;
-    cout<<"Future Value Function 5 = $"<<fv6(pv,ir/100,n)<<endl;
+    cout<<"Future Value Function 7 = $"<<fv7(pv,ir/100,n)<<endl;
     
     //Exit stage right!
     return 0;
 }
-float fv6 (float p,float i, int n){
+float fv7 (float p,float i, int n){
     int ip = p*100; //In pennies
     p=ip;
     
