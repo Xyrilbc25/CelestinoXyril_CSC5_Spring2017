@@ -15,7 +15,7 @@ using namespace std; //Name-space under which system libraries exist
 //Global Constants
 
 //Function Prototypes
-int getacc (int, int, int, int, int);      //Gets number of accidents
+int getacc (int);      //Gets number of accidents
 void findlow();    //Determines which city has the lowest accidents
 
 //Execution begins here
@@ -29,39 +29,51 @@ int main(int argc, char** argv) {
     
     //Input data
     cout<<"This program calculates the # of accidents in 5 regions"<<endl;
-    getacc(findlow);
+    getacc(n);
+    getacc(s);
+    getacc(e);
+    getacc(w);
+    getacc(c);
     
     //Output the transformed data
-    cout<<findlow(n,s,e,w,c)<<endl;
+    cout<<findlow()<<endl;
     //Exit stage right!
     return 0;
 }
-int getacc(int n,int s,int e,int w,int c){
+int getacc(int n){
     cout<<"Input the number of accidents in North City :";
     cin>>n;
     if (!(n>=0)){
     cout<<"The number of accidents cannot be less than 0"<<endl;
     return 1; 
     }
+}
+int getacc(int s){
     cout<<"Input the number of accidents in South City :";
     cin>>s;
     if (!(s>=0)){
     cout<<"The number of accidents cannot be less than 0"<<endl;
     return 1; 
     }
+}
+int getacc(int e){
     cout<<"Input the number of accidents in East City :";
     cin>>e;
     if (!(e>=0)){
     cout<<"The number of accidents cannot be less than 0"<<endl;
     return 1; 
     }
+}
+int getacc(int w){
     cout<<"Input the number of accidents in West City :";
     cin>>w;
     if (!(w>=0)){
     cout<<"The number of accidents cannot be less than 0"<<endl;
     return 1; 
     }
-    cout<<"Input the number of accidents in Central City :";
+}
+int getacc(int c){
+    cout<<"Input the number of accidents in CentralCity :";
     cin>>c;
     if (!(c>=0)){
     cout<<"The number of accidents cannot be less than 0"<<endl;
