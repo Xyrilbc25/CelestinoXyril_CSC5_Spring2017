@@ -8,6 +8,7 @@
 
 //System Libraries
 #include <iostream>  //Input - Output Library
+#include <iomanip>
 using namespace std; //Name-space under which system libraries exist
 
 //User Libraries
@@ -36,7 +37,7 @@ int main(int argc, char** argv) {
     getacc(c);
     
     //Output the transformed data
-    cout<<findlow()<<endl;
+    void findlow();
     //Exit stage right!
     return 0;
 }
