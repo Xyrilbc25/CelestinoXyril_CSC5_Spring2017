@@ -49,22 +49,15 @@ int main(int argc, char** argv) {
 }
 
 void mrkSort (int a[],int n){
-    for(int indx = 0; indx<n-1;indx++){
-        smlstVl(a,n,indx);
+    for(int pos = 0; pos<n-1;pos++){
+        for (int indx = pos+1; indx<n; indx++){
+            if(a[pos]>a[indx]){
+                int temp = a[pos];
+                    a[pos] = a[indx];
+                    a[indx] = temp;
+            }
+        }
     }
-}
-void smlstVl (int a[],int n, int pos){
-    for (int indx = pos; indx<n; indx++){
-        if(a[pos]>a[indx])swap2(a[pos],a[indx]);
-    }
-}
-
-//Temporary variable intermediate swap
-void swap1 (int &a, int &b){
-    int temp;
-    temp = a;
-    a = b;
-    b = temp;
 }
 
 //Logical in-place swap
