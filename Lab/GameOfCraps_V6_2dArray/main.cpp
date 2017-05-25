@@ -17,12 +17,12 @@ using namespace std; //Name-space under which system libraries exist
 
 //Global Constants
 const float PERCENT = 100.0f;   //Conversion to percent
-
+const int COLS = 2;
 //Function Prototypes
 char rollDie(int);                                          //Roll the Dice
-void fileDesp(ofstream &,int [], int[],int,int,int,int); //File Display
-void scrnDesp(int [], int[],int,int,int,int);               //Screen Display
-void crpGame(int [], int[],int,int &,int &,int &);          //Craps Game
+void fileDesp(ofstream &,int [][COLS],int,int,int,int); //File Display
+void scrnDesp(int [][COLS],int,int,int,int);               //Screen Display
+void crpGame(int [][COLS],int,int &,int &,int &);          //Craps Game
 
 //Execution begins here
 int main(int argc, char** argv) {
@@ -30,15 +30,14 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     
     //Declare and initialize variables
-    ifstream in;            //Input File
-    ofstream out;           //Output File
-    int nGames;             //Number of games, wins/losses
-    int mxThrw = 0;         //Game limiter/throw statistics
+    ifstream in;                //Input File
+    ofstream out;               //Output File
+    int nGames;                 //Number of games, wins/losses
+    int mxThrw = 0;             //Game limiter/throw statistics
     int numThrw = 0;        
     int lmGames = 100000000;
-    const int SIZE = 13;    //Size of arrays
-    int wins[SIZE] = {};    //Initializing win array
-    int losses [SIZE] = {}; //Initializing loss array
+    const int SIZE = 13;        //Size of arrays
+    int winlose[SIZE][COLS]= {};  //Initializing win array
     
     //Initialize Variables
     string inName = "GameInfo.dat";     //String name
@@ -50,22 +49,25 @@ int main(int argc, char** argv) {
     
     //Play the Game the prescribed amount of times
     int beg=time (0);   //Time the game play
-    void crpGame(wins,losses,SIZE,nGames,numThrw,mxThrw);
+    crpGame(winlose,SIZE,nGames,numThrw,mxThrw);
     int end = time(0);
     
     //Output the transformed data to the screen
-    cout<<"Total time to play these games in integer seconds = "<<end-beg<<endl;
-    scrnDesp (wins,losses,SIZE,nGames,numThrw,mxThrw);
+    out<<"Total time to play these games in integer seconds = "<<end-beg<<endl;
+    scrnDesp (winlose,SIZE,nGames,numThrw,mxThrw);
     
     //Output the Transformed Data into a file
-    fileDesp(ofstream &out, int wins[],int losses[],int SIZE,int nGames,int numThrw,int mxThrw);
+    cout<<"Total time to play these games in int seconds = "<<end-beg<<endl;
+    fileDesp(out,winlose,SIZE,nGames,numThrw,mxThrw);
      
-    //Exit stage right!
+    //Close Files
     in.close();
     out.close();
+    
+    //Exit Stage Right
     return 0;
 }
-void crpGame(int wins[], int losses[],int SIZE,int &nGames,int &numThrw,int &mxThrw){
+void crpGame(int winlose[][COLS],int SIZE,int &nGames,int &numThrw,int &mxThrw){
     for(int game = 1;game<=nGames;game++){
         //Throw Dice and Sum
         int gmThrw = 1;
@@ -76,10 +78,10 @@ void crpGame(int wins[], int losses[],int SIZE,int &nGames,int &numThrw,int &mxT
         //Determine Wins and Losses
         switch (sum1){
             case 7:
-            case 11:wins[sum1]++;break;
+            case 11:winlose[sum1][0]++;break;
             case 2:
             case 3:
-            case 12: losses[sum1]++;break;
+            case 12: winlose[sum1][1]++;break;
             default:{
                 //Loop until a 7 or previous sum is thrown
                 bool thrwAgn = true;
@@ -88,10 +90,10 @@ void crpGame(int wins[], int losses[],int SIZE,int &nGames,int &numThrw,int &mxT
                     char sum2 = rollDie(6);
                     gmThrw++;
                     if(sum2==7){
-                        losses[sum1]++;
+                        winlose[sum1][1]++;
                         thrwAgn = false;
                     } else if (sum1==sum2){
-                        wins[sum1]++;
+                        winlose[sum1][0]++;
                         thrwAgn=false;
                     }
                 }while(thrwAgn);    //do-while
@@ -101,15 +103,15 @@ void crpGame(int wins[], int losses[],int SIZE,int &nGames,int &numThrw,int &mxT
         if(mxThrw<gmThrw)mxThrw=gmThrw;
     }
 }
-void fileDesp(ofstream &out,int wins[], int losses[],int SIZE,int nGames,int numThrw,int mxThrw){
+void fileDesp(ofstream &out,int winlose[][COLS],int SIZE,int nGames,int numThrw,int mxThrw){
     cout<<fixed<<setprecision(2)<<showpoint;
     cout<<"Total number of Games = "<<nGames<<endl;
     cout<<"Roll Wins Losses"<<endl;
     int sWins=0,sLosses=0;
     for(int sum = 2; sum<SIZE; sum++){
-        sWins +- wins[sum];
-        sLosses +- losses[sum];
-        cout<<setw(4)<<sum<<setw(10)<<wins[sum]<<setw(10)<<losses[sum]<<endl;
+        sWins += winlose[sum][0];
+        sLosses += winlose[sum][1];
+        cout<<setw(4)<<sum<<setw(10)<<winlose[sum][0]<<setw(10)<<winlose[sum][1]<<endl;
     }
     cout<<"Number of games won   = "<<sWins<<endl;
     cout<<"number of games lost  = "<<sLosses<<endl;
@@ -123,15 +125,15 @@ void fileDesp(ofstream &out,int wins[], int losses[],int SIZE,int nGames,int num
     
 }
 
-void scrnDesp(int wins[], int losses[],int SIZE,int nGames,int numThrw,int mxThrw){
+void scrnDesp(int winlose[][COLS],int SIZE,int nGames,int numThrw,int mxThrw){
     cout<<fixed<<setprecision(2)<<showpoint;
     cout<<"Total number of Games = "<<nGames<<endl;
     cout<<"Roll Wins Losses"<<endl;
     int sWins=0,sLosses=0;
     for(int sum = 2; sum<SIZE; sum++){
-        sWins +- wins[sum];
-        sLosses +- losses[sum];
-        cout<<setw(4)<<sum<<setw(10)<<wins[sum]<<setw(10)<<losses[sum]<<endl;
+        sWins +- winlose[sum][0];
+        sLosses +- winlose[sum][1];
+        cout<<setw(4)<<sum<<setw(10)<<winlose[sum][0]<<setw(10)<<winlose[sum][1]<<endl;
     }
     cout<<"Number of games won   = "<<sWins<<endl;
     cout<<"number of games lost  = "<<sLosses<<endl;

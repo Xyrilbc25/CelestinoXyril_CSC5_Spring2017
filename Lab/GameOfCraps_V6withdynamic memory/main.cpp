@@ -1,8 +1,8 @@
 /* 
  * File:   GameOfCraps_V4
  * Author: Xyril Celestino
- * Created on May 23, 2017, 12:24 PM
- * Purpose:  Project 2 - Simulate a Craps Game using arrays
+ * Created on May 25, 2017, 11:24 AM
+ * Purpose:  Project 2 - Simulate a Craps Game using arrays and pointers
  */
 
 //System Libraries
@@ -20,7 +20,7 @@ const float PERCENT = 100.0f;   //Conversion to percent
 
 //Function Prototypes
 char rollDie(int);                                          //Roll the Dice
-void fileDesp(ofstream &,int [], int[],int,int,int,int); //File Display
+void fileDesp(ofstream &out,int [], int[],int,int,int,int); //File Display
 void scrnDesp(int [], int[],int,int,int,int);               //Screen Display
 void crpGame(int [], int[],int,int &,int &,int &);          //Craps Game
 
@@ -30,42 +30,48 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     
     //Declare and initialize variables
-    ifstream in;            //Input File
-    ofstream out;           //Output File
-    int nGames;             //Number of games, wins/losses
-    int mxThrw = 0;         //Game limiter/throw statistics
-    int numThrw = 0;        
+    ifstream in;                //Input file
+    ofstream out;               //Output File
+    int nGames;                 //Number of games
+    int mxThrw = 0;
+    int numThrw = 0;
     int lmGames = 100000000;
-    const int SIZE = 13;    //Size of arrays
-    int wins[SIZE] = {};    //Initializing win array
-    int losses [SIZE] = {}; //Initializing loss array
+    int SIZE = 13;              //size the arrays
+    int *wins=new int[SIZE];    //allocating memory
+    int *losses=new int[SIZE];  //allocate memory
     
     //Initialize Variables
-    string inName = "GameInfo.dat";     //String name
-    char outName[] = "GameStats.dat";   //Character array name
-    in.open (inName.c_str());           //Open input file
-    out.open(outName);                  //open output file
+    string inName = "GameInfo.dat";
+    char outName[] = "GameStats.dat";
+    in.open (inName.c_str());
+    out.open(outName);
     while(in>>nGames); //Last Value becomes number of games
-    nGames=nGames>lmGames?lmGames:nGames;   //Limit games if to high
+    nGames=nGames>lmGames?lmGames:nGames;
     
-    //Play the Game the prescribed amount of times
-    int beg=time (0);   //Time the game play
+    //Play the Game
+    int beg=time (0);
     void crpGame(wins,losses,SIZE,nGames,numThrw,mxThrw);
     int end = time(0);
     
     //Output the transformed data to the screen
-    cout<<"Total time to play these games in integer seconds = "<<end-beg<<endl;
     scrnDesp (wins,losses,SIZE,nGames,numThrw,mxThrw);
     
     //Output the Transformed Data into a file
-    fileDesp(ofstream &out, int wins[],int losses[],int SIZE,int nGames,int numThrw,int mxThrw);
+    void fileDesp(ofstream &out, int wins[],int losses[],int SIZE,int nGames,int numThrw,int mxThrw);
      
-    //Exit stage right!
+    //close files
     in.close();
     out.close();
+    
+    //Deallocate memory
+    delete []wins;
+    delete []losses;
+    
+    //Exit stage right!
+    
     return 0;
 }
-void crpGame(int wins[], int losses[],int SIZE,int &nGames,int &numThrw,int &mxThrw){
+void crpGame(int *wins, int *losses,int SIZE,int &nGames,int &numThrw,int &mxThrw){
     for(int game = 1;game<=nGames;game++){
         //Throw Dice and Sum
         int gmThrw = 1;
